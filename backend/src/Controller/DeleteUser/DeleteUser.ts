@@ -14,7 +14,7 @@ export default {
       })
 
       return res.status(200).json({
-        message:"User is deleted!"
+        message:"User is deleted!",
       })
     } catch (error) {
       return res.status(401).json({message:error.message})
