@@ -27,7 +27,7 @@ export default {
       })
 
       return res.status(200).json({
-        massage:[
+        message:[
           {
             "Id": User.id,
             "User":User.user,
