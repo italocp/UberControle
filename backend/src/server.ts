@@ -1,8 +1,8 @@
 import Express from 'express'
 
-import CreateUser from './Controller/CreateUser/CreateUser';
-import DeleteUser from './Controller/DeleteUser/DeleteUser';
-import UpdateUserName from './Controller/UpdateUser/UpdateUserName';
+import CreateUser from './Controller/UserController/CreateUser/CreateUser';
+import DeleteUser from './Controller/UserController/DeleteUser/DeleteUser';
+import UpdateUserName from './Controller/UserController/UpdateUser/UpdateUserName';
 
 const app = Express()
 app.use(Express.json());
