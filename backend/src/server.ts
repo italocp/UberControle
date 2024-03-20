@@ -6,6 +6,7 @@ import UpdateUserName from './Controller/UsersController/UpdateUser/UpdateUserNa
 import CreateEntries from './Controller/EntriesController/CreateEntries/CreateEntries';
 import UpdateEntries from './Controller/EntriesController/UpdateEntries/UpdateEntries';
 import DeleteEntries from './Controller/EntriesController/DeleteEntries/DeleteEntries';
+import ReadEntries from './Controller/EntriesController/ReadEntries/ReadEntries';
 
 const app = Express()
 app.use(Express.json());
@@ -17,6 +18,7 @@ app.delete('/:id', DeleteUser.DeleteUser)
 app.post('/entries/:id', CreateEntries.CreateEntries)
 app.put('/entries/:id', UpdateEntries.UpdateUserName)
 app.delete('/entries/:id', DeleteEntries.DeleteEntries)
+app.get('/entries/:id', ReadEntries.GetEntries)
 
 app.listen(8000, () => {
   console.clear()
