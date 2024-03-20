@@ -4,31 +4,31 @@ import {Request, Response} from 'express'
 const prisma = new PrismaClient()
 
 export default {
-  async UpdateEntrie(req: Request, res: Response) {
+  async UpdateExpenses(req: Request, res: Response) {
     try {
       const {id} = req.params
-      const {km, value} = req.body
+      const {name, value} = req.body
 
-     const entrieExists = await prisma.entry.findUnique({where:{id}})
+     const expenseExists = await prisma.expense.findUnique({where:{id}})
 
-     if(!entrieExists) {
+     if(!expenseExists) {
        return res.status(400).json({
          error: true,
-         message: 'Entry does not exist'
+         message: 'Expense does not exist'
        })
      }
 
-     const Entry = await prisma.entry.update({
+     const Expense = await prisma.expense.update({
       where:{id},
       data:{
-        km,
+        name,
         value
       }
      })
 
       return res.status(200).json({
-        message:"Entry is updated!",
-        EntryUpdated:Entry
+        message:"Expense is updated!",
+        EntryUpdated:Expense
       })
 
     } catch (error) {

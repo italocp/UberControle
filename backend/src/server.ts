@@ -7,6 +7,10 @@ import CreateEntries from './Controller/EntriesController/CreateEntries/CreateEn
 import UpdateEntries from './Controller/EntriesController/UpdateEntries/UpdateEntries';
 import DeleteEntries from './Controller/EntriesController/DeleteEntries/DeleteEntries';
 import ReadEntries from './Controller/EntriesController/ReadEntries/ReadEntries';
+import CreateExpenses from './Controller/ExpensesController/CreateExpenses/CreateExpenses';
+import UpdateExpenses from './Controller/ExpensesController/UpdateExpenses/UpdateExpenses';
+import DeleteExpenses from './Controller/ExpensesController/DeleteExpenses/DeleteExpenses';
+import ReadExpenses from './Controller/ExpensesController/ReadExpenses/ReadExpenses';
 
 const app = Express()
 app.use(Express.json());
@@ -16,9 +20,14 @@ app.put('/:id', UpdateUserName.UpdateUserName)
 app.delete('/:id', DeleteUser.DeleteUser)
 
 app.post('/entries/:id', CreateEntries.CreateEntries)
-app.put('/entries/:id', UpdateEntries.UpdateUserName)
+app.put('/entries/:id', UpdateEntries.UpdateEntrie)
 app.delete('/entries/:id', DeleteEntries.DeleteEntries)
 app.get('/entries/:id', ReadEntries.GetEntries)
+
+app.post('/expenses/:id', CreateExpenses.CreateExpenses)
+app.put('/expenses/:id', UpdateExpenses.UpdateExpenses)
+app.delete('/expenses/:id', DeleteExpenses.DeleteExpenses)
+app.get('/expenses/:id', ReadExpenses.GetExpenses)
 
 app.listen(8000, () => {
   console.clear()
