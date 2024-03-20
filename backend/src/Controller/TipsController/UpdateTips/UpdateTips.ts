@@ -4,21 +4,21 @@ import {Request, Response} from 'express'
 const prisma = new PrismaClient()
 
 export default {
-  async UpdateExpenses(req: Request, res: Response) {
+  async UpdateTips(req: Request, res: Response) {
     try {
       const {id} = req.params
       const {name, value} = req.body
 
-     const expenseExists = await prisma.expense.findUnique({where:{id}})
+     const tipsExists = await prisma.tip.findUnique({where:{id}})
 
-     if(!expenseExists) {
+     if(!tipsExists) {
        return res.status(400).json({
          error: true,
-         message: 'Expense does not exist'
+         message: 'Tip does not exist'
        })
      }
 
-     const Expense = await prisma.expense.update({
+     const Tip = await prisma.tip.update({
       where:{id},
       data:{
         name,
@@ -27,8 +27,8 @@ export default {
      })
 
       return res.status(200).json({
-        message:"Expense is updated!",
-        ExpenseUpdated:Expense
+        message:"Tip is updated!",
+        TipUpdated:Tip
       })
 
     } catch (error) {

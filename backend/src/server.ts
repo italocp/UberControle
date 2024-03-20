@@ -11,6 +11,10 @@ import CreateExpenses from './Controller/ExpensesController/CreateExpenses/Creat
 import UpdateExpenses from './Controller/ExpensesController/UpdateExpenses/UpdateExpenses';
 import DeleteExpenses from './Controller/ExpensesController/DeleteExpenses/DeleteExpenses';
 import ReadExpenses from './Controller/ExpensesController/ReadExpenses/ReadExpenses';
+import CreateTips from './Controller/TipsController/CreateTips/CreateTips';
+import UpdateTips from './Controller/TipsController/UpdateTips/UpdateTips';
+import DeleteTips from './Controller/TipsController/DeleteTips/DeleteTips';
+import ReadTips from './Controller/TipsController/ReadTips/ReadTips';
 
 const app = Express()
 app.use(Express.json());
@@ -28,6 +32,11 @@ app.post('/expenses/:id', CreateExpenses.CreateExpenses)
 app.put('/expenses/:id', UpdateExpenses.UpdateExpenses)
 app.delete('/expenses/:id', DeleteExpenses.DeleteExpenses)
 app.get('/expenses/:id', ReadExpenses.GetExpenses)
+
+app.post('/tips/:id', CreateTips.CreateTips)
+app.put('/tips/:id', UpdateTips.UpdateTips)
+app.delete('/tips/:id', DeleteTips.DeleteTips)
+app.get('/tips/:id', ReadTips.GetTips)
 
 app.listen(8000, () => {
   console.clear()
